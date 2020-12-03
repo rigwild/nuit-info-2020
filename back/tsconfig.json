@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "es2019",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ES2019"
+    ],
+    "plugins": [
+      {
+        "name": "postgres-ts-plugin",
+        "options": {
+          "host": "localhost"
+        }
+      }
+    ]
+  },
+  "include": [
+    "./*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

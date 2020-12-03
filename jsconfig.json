@@ -1,0 +1,15 @@
+{
+  "include": ["./src/**/*","./rest/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "#/*": [
+        "rest/*"
+      ]
+    }
+  },
+  "exclude": ["node_modules"]
+}
