@@ -1,27 +1,25 @@
-import Vue from 'vue'
-
+import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import './index.css'
 
-import BootstrapVue from 'bootstrap-vue'
+const app = createApp(App)
+
+import { router } from './router'
+app.use(router)
+
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-Vue.use(BootstrapVue)
 
 import VueFeather from 'vue-feather'
-Vue.use(VueFeather)
+app.use(VueFeather)
 
 import { Promised } from 'vue-promised'
-Vue.component('Promised', Promised)
+app.component('Promised', Promised)
+
+import Promisify from './components/Promisify.js'
+app.component('Promisify', Promisify)
 
 // Check environment variable is set
-if (!process.env.VUE_APP_API_PREFIX) throw new Error('Missing API_PREFIX environment variable')
+// if (!process.env.VUE_APP_API_PREFIX) throw new Error('Missing API_PREFIX environment variable')
 
-Vue.config.productionTip = false
-
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+app.mount('#app')
+// Vue.config.productionTip = false

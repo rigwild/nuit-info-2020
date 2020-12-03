@@ -3,58 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve:front": "vue-cli-service serve",
+    "serve:front": "vite",
     "serve:back": "rollup -w -c rollup.config.js",
     "build": "yarn build:back && yarn build:front",
-    "build:front": "vue-cli-service build",
+    "build:front": "vite build",
     "build:back": "rollup -c",
-    "lint": "vue-cli-service lint",
     "clean": "rm -rf dist rest server/dist server/routers"
   },
   "dependencies": {
-    "@vue/composition-api": "^1.0.0-beta.20",
-    "bcrypt": "^5.0.0",
-    "bootstrap": "^4.5.3",
-    "bootstrap-vue": "^2.19.0",
-    "cors": "^2.8.5",
-    "debug": "^4.3.1",
     "feather-icons": "^4.28.0",
-    "postgres": "^2.0.0-beta.2",
-    "vue": "^2.6.12",
+    "vue": "^3.0.2",
     "vue-feather": "^1.1.1",
     "vue-promised": "^2.0.2",
-    "vue-router": "^3.4.9",
-    "vuex": "^3.6.0",
-    "vuex-persistedstate": "^3.1.0"
+    "vue-router": "^4.0.0-rc.6"
   },
   "devDependencies": {
-    "@rollup/plugin-proxy": "file:///home/minigugus/UTC/GIT/PERSO/marshal/dist",
-    "@types/bcrypt": "^3.0.0",
-    "@types/cors": "^2.8.8",
-    "@types/debug": "^4.1.5",
-    "@types/express-session": "^1.17.3",
-    "@vue/cli-plugin-babel": "^4.5.9",
-    "@vue/cli-plugin-eslint": "^4.5.9",
-    "@vue/cli-service": "^4.5.9",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.14.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-vue": "^7.1.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "postgres-ts-plugin": "file:///home/minigugus/UTC/GIT/PERSO/postgres-ts-plugin",
+    "@rollup/plugin-proxy": "file:../marshal/dist",
+    "@vue/compiler-sfc": "^3.0.2",
+    "bootstrap": "^4.5.3",
     "rollup": "^2.33.1",
     "rollup-plugin-typescript2": "^0.29.0",
     "typescript": "^4.1.2",
-    "vue-template-compiler": "^2.6.12"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "vite": "^1.0.0-rc.8"
+  }
 }

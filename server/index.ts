@@ -11,7 +11,7 @@ const dist = resolve(__dirname, '../../dist'); // Resolved from server/dist/inde
 
 app.use(express.static(dist));
 
-const apiErrorHandler: express.ErrorRequestHandler = (error, req, res) => res.status(500).json({
+const apiErrorHandler: express.ErrorRequestHandler = (error, req, res, next) => res.status(500).json({
   error: {
     code: 'INTERNAL_SERVER_ERROR',
     message: 'An internal server occured: ' + (error && (error.message || error)),

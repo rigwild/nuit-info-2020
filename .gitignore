@@ -4,3 +4,4 @@ rest/
 server/routers/
 yarn-error.log
 .env
+*~
