@@ -33,27 +33,27 @@ CREATE TABLE report_product
 
 -- ----
 
-INSERT INTO product (name, is_consumable) values ('Crème solaire', true);
-INSERT INTO product (name, is_consumable) values ('Crème solaire', false);
-INSERT INTO product (name, is_consumable) values ('Parfum', true);
-INSERT INTO product (name, is_consumable) values ('Parfum', false);
-INSERT INTO product (name, is_consumable) values ('Déodorant', true);
-INSERT INTO product (name, is_consumable) values ('Déodorant', false);
-INSERT INTO product (name, is_consumable) values ('Crème hydratante', true);
-INSERT INTO product (name, is_consumable) values ('Crème hydratante', false);
-INSERT INTO product (name, is_consumable) values ('Maquillage', true);
-INSERT INTO product (name, is_consumable) values ('Maquillage', false);
-INSERT INTO product (name, is_consumable) values ('Essence', false);
+INSERT INTO product (name, is_consumable) values ('Sun screen', true);
+INSERT INTO product (name, is_consumable) values ('Sun screen', false);
+INSERT INTO product (name, is_consumable) values ('Perfume', true);
+INSERT INTO product (name, is_consumable) values ('Perfume', false);
+INSERT INTO product (name, is_consumable) values ('Deodorant', true);
+INSERT INTO product (name, is_consumable) values ('Deodorant', false);
+INSERT INTO product (name, is_consumable) values ('Moisturizer', true);
+INSERT INTO product (name, is_consumable) values ('Moisturizer', false);
+INSERT INTO product (name, is_consumable) values ('Makeup', true);
+INSERT INTO product (name, is_consumable) values ('Makeup', false);
+INSERT INTO product (name, is_consumable) values ('Gasoline', false);
 INSERT INTO product (name, is_consumable) values ('Cigarette', true);
 INSERT INTO product (name, is_consumable) values ('Cigarette', false);
-INSERT INTO product (name, is_consumable) values ('Engrais', false);
+INSERT INTO product (name, is_consumable) values ('Fertilizer', false);
 INSERT INTO product (name, is_consumable) values ('Pesticides', false);
-INSERT INTO product (name, is_consumable) values ('Peintures', false);
+INSERT INTO product (name, is_consumable) values ('Paintings', false);
 
-INSERT INTO activity (name) values ('Baignade');
-INSERT INTO activity (name) values ('Activité nautiques');
-INSERT INTO activity (name) values ('Bateau de pêche');
-INSERT INTO activity (name) values ('Bateau de loisir');
-INSERT INTO activity (name) values ('Bateau à voiles');
+INSERT INTO activity (name) values ('Bathing');
+INSERT INTO activity (name) values ('Nautical activities');
+INSERT INTO activity (name) values ('Fishing boat');
+INSERT INTO activity (name) values ('Leisure boat');
+INSERT INTO activity (name) values ('Sail boat');
 
 COMMIT;

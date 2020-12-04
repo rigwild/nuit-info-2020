@@ -118,20 +118,20 @@ export default {
     },
     async sendForm() {
       this.isSendingForm = true
+      console.log(this.activityStartTimestamp, this.activityEndTimestamp, this.activityEndTimestamp - this.activityStartTimestamp);
       await new Promise(res => setTimeout(res, 3000))
       await report({
         activityId: this.activity,
         deviceId: deviceId.value,
         position: this.location,
         products: this.consumableProducts.concat(this.reportedProducts).filter(x => x.checked).map(x => x.id),
-        activityStartedAt: this.activityStartedAt,
-        activityEndedAt: this.activityEndedAt
+        activityStartedAt: this.activityStartTimestamp,
+        activityEndedAt: this.activityEndTimestamp
       })
         .finally(() => {
           this.isSendingForm = false
           this.hasValidatedForm = true
           this.$emit('done');
-          setTimeout(() => this.$router.push('/'), 3000)
         })
     },
     cancel() {

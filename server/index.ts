@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import cors from 'cors';
 import express from 'express';
-// import session from 'express-session';
 import activities from './routers/activities';
 import products from './routers/products';
 import report from './routers/report';
@@ -34,11 +33,6 @@ app.use('/api',
   products,
   activities,
   report,
-  // unlogged,
-  // session({
-  //   secret: process.env.COOKIE_SECRET || 'asecret'
-  // }),
-  // logged,
   apiErrorHandler,
   notFoundHandler
 );

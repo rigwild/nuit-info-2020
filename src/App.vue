@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" :class="{ 'active': $route.fullPath === '/' }">
-          <router-link to="/" class="nav-link">Hello World</router-link>
+          <router-link to="/" class="nav-link">Statistics</router-link>
         </li>
-        <li class="nav-item" :class="{ 'active': $route.fullPath === '/location' }">
+        <!-- <li class="nav-item" :class="{ 'active': $route.fullPath === '/location' }">
           <router-link to="/location" class="nav-link">Location</router-link>
-        </li>
-        <li class="nav-item" :class="{ 'active': $route.fullPath === '/addReport' }">
-          <router-link to="/addReport" class="nav-link">Add report</router-link>
+        </li> -->
+        <li class="nav-item" :class="{ 'active': $route.fullPath === '/activity' }">
+          <router-link to="/activity" class="nav-link">My activity</router-link>
         </li>
       </ul>
     </div>

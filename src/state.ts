@@ -18,7 +18,7 @@ watch(deviceId, value => localStorage.setItem(DEVICE_ID_LOCAL_STORAGE_KEY, value
 // ---
 
 const ACTIVITY_START_TIMESTAMP_SESSION_STORAGE_KEY = 'activity-start-timestamp';
-const ACTIVITY_END_TIMESTAMP_SESSION_STORAGE_KEY = 'activity-start-timestamp';
+const ACTIVITY_END_TIMESTAMP_SESSION_STORAGE_KEY = 'activity-end-timestamp';
 
 const getActivityTimestamp = (key: string) => {
   const timestamp = sessionStorage.getItem(key);
@@ -30,11 +30,11 @@ const getActivityTimestamp = (key: string) => {
 export const activityStartTimestamp = ref<Date | null>(getActivityTimestamp(ACTIVITY_START_TIMESTAMP_SESSION_STORAGE_KEY));
 export const activityEndTimestamp = ref<Date | null>(getActivityTimestamp(ACTIVITY_END_TIMESTAMP_SESSION_STORAGE_KEY));
 
-const updateActivity = (value: Date) => value === null
-  ? sessionStorage.removeItem(ACTIVITY_START_TIMESTAMP_SESSION_STORAGE_KEY)
-  : sessionStorage.setItem(ACTIVITY_START_TIMESTAMP_SESSION_STORAGE_KEY, +value + '');
-watch(activityStartTimestamp, updateActivity);
-watch(activityEndTimestamp, updateActivity);
+const updateActivity = (key: string) => (value: Date) => value === null
+  ? sessionStorage.removeItem(key)
+  : sessionStorage.setItem(key, +value + '');
+watch(activityStartTimestamp, updateActivity(ACTIVITY_START_TIMESTAMP_SESSION_STORAGE_KEY));
+watch(activityEndTimestamp, updateActivity(ACTIVITY_END_TIMESTAMP_SESSION_STORAGE_KEY));
 
 export const startActivity = () => (activityStartTimestamp.value = new Date());
 export const stopActivity = () => (activityEndTimestamp.value = new Date());

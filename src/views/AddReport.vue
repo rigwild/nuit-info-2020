@@ -3,7 +3,7 @@
     <h1>Add an activity</h1>
 
     <DoingActivity v-if="!!activityStartTimestamp" @finish="finishedActivity" />
-    <form v-else-if="&& !hasValidatedForm" @submit.prevent="sendForm">
+    <form v-else-if="!hasValidatedForm" @submit.prevent="sendForm">
       <Promisify :promise="promise">
         <template #combined="{ isPending, error }">
           <div v-if="isPending" class="text-center">
