@@ -1,9 +1,10 @@
 import { resolve } from 'path';
 import cors from 'cors';
 import express from 'express';
-import session from 'express-session';
-import logged from './routers/logged';
-import unlogged from './routers/unlogged';
+// import session from 'express-session';
+import activities from './routers/activities';
+import products from './routers/products';
+import report from './routers/report';
 
 const app = express();
 
@@ -28,13 +29,16 @@ const notFoundHandler: express.RequestHandler = (req, res) => res.status(404).js
 });
 
 app.use('/api',
-  cors({ origin: 'http://localhost:8080', credentials: true }),
+  cors({ origin: 'http://localhost:3000', credentials: true }),
   express.json(),
-  unlogged,
-  session({
-    secret: process.env.COOKIE_SECRET || 'asecret'
-  }),
-  logged,
+  products,
+  activities,
+  report,
+  // unlogged,
+  // session({
+  //   secret: process.env.COOKIE_SECRET || 'asecret'
+  // }),
+  // logged,
   apiErrorHandler,
   notFoundHandler
 );

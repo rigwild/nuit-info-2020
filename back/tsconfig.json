@@ -15,7 +15,8 @@
       {
         "name": "postgres-ts-plugin",
         "options": {
-          "host": "localhost"
+          "host": "localhost",
+          "database": "surfor"
         }
       }
     ]

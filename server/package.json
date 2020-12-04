@@ -4,19 +4,6 @@
   "authors": "",
   "version": "",
   "main": "./dist/index.js",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "cors": "^2.8.5",
-    "debug": "^4.3.1",
-    "postgres": "^2.0.0-beta.2",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1"
-  },
-  "devDependencies": {
-    "postgres-ts-plugin": "file:../../postgres-ts-plugin",
-    "@types/bcrypt": "^3.0.0",
-    "@types/cors": "^2.8.8",
-    "@types/debug": "^4.1.5",
-    "@types/express-session": "^1.17.3"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

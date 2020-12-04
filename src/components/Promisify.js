@@ -3,22 +3,21 @@ import { defineComponent, ref, toRefs, unref, watch } from 'vue';
 export default defineComponent({
   name: 'Promisify',
   props: {
-      promise: {},
+    promise: {}
   },
   setup(props, { slots }) {
     const { promise } = toRefs(props);
     const isPending = ref(false);
-    const error = ref(null);
-    const data = ref(null);
+    const error = ref(undefined);
+    const data = ref(promise.value instanceof Promise ? undefined : promise.value);
     let expired;
     const update = () => {
-      console.log('AAAA');
       if (expired)
         expired.value = true;
       const exp = (expired = ref(false));
       isPending.value = true
-      error.value = null
-      data.value = null
+      error.value = undefined
+      data.value = undefined
       Promise.resolve(promise.value)
         .then(
           res => (!exp.value && (data.value = res, isPending.value = false)),
